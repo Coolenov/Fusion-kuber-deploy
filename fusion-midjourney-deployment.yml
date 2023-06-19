@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: midjourney-api-deployment
+  labels:
+    app: midjourney
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: midjourney
+    template:
+      metadata:
+        labels:
+          app: midjourney
+      spec:
+        containers:
+          - name: midjourney
+            image: coolenov/fusion-midjourney-api:latest

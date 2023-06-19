@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-collector-deployment
+  labels:
+    app: api-collector
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-collector
+    template:
+      metadata:
+        labels:
+          app: api-collector
+      spec:
+        containers:
+          - name: api-collector
+            image: coolenov/fusion-api-collector:latest
+            ports:
+              - containerPort: 10000

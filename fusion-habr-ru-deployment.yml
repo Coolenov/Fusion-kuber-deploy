@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-habr-ru-deployment
+  labels:
+    app: habr-ru
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: habr-ru
+    template:
+      metadata:
+        labels:
+          app: habr-ru
+      spec:
+        containers:
+          - name: habr-ru
+            image: coolenov/fusion-habr-ru-api:latest
