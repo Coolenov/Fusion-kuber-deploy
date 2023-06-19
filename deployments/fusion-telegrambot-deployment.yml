@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: telegram-bot-deployment
+  namespace: test
   labels:
     app: telegram-bot
 
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: telegram-bot

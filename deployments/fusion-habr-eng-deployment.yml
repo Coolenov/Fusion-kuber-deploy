@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: habr-eng-deployment
+  namespace: test
   labels:
     app: habr-eng
 
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: habr-eng

@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: midjourney-api-deployment
+  namespace: test
   labels:
     app: midjourney
 
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: midjourney
