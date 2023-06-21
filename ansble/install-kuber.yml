@@ -1,0 +1,31 @@
+---
+- name  : Configure docker
+  hosts : all
+  become: yes
+
+  tasks:
+    - name : Install gnupg
+      shell: apt-get install gnupg -y
+
+    - name : Add key
+      shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+    - name : Creating a file with content
+      copy :
+        dest: /etc/apt/sources.list.d/kubernetes.list
+        content: |
+          deb https://apt.kubernetes.io/ kubernetes-xenial main
+
+    - name : Apt update
+      shell: apt update
+
+    - name : Install kubelet, kubeadm,kubectl
+      shell: apt install kubelet kubeadm kubectl -y
+
+    - name : Stop updates packages
+      shell: apt-mark hold kubelet kubeadm kubectl
+
+    - name : Check
+      shell: kubectl version --client --output=yaml
+
+

@@ -1,0 +1,11 @@
+---
+- name  : Configure server
+  hosts : master
+  become: yes
+
+  tasks:
+    - name : Open ports 10250, 30000
+      shell: iptables -I INPUT 1 -p tcp --match multiport --dports 10250,30000:32767 -j ACCEPT
+
+    - name : Save changes
+      shell: netfilter-persistent save
