@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: fusionapi
-          image: coolenov/fusion-api-collector:latest
+          image: coolenov/fusion-api:latest
           ports:
             - containerPort: 10000
