@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-collector-deployment
+  name: api-deployment
   namespace: test-namespace
   labels:
     app: api-depl-lab
