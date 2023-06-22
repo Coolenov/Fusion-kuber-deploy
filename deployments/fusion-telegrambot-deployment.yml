@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: telegram-bot-deployment
-  namespace: test
+  name: telegrambot-deployment
+  namespace: test-namespace
   labels:
-    app: telegram-bot
+    app: telegrambot-depl-lab
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: telegram-bot
-    template:
-      metadata:
-        labels:
-          app: telegram-bot
-      spec:
-        containers:
-          - name: telegram-bot
-            image: coolenov/fusion-telegrambot:latest
+  template:
+    metadata:
+      labels:
+        app: telegram-bot
+    spec:
+      containers:
+        - name: telegram-bot
+          image: coolenov/fusion-telegrambot:latest

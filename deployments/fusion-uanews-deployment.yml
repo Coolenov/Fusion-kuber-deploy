@@ -2,20 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: uanews-deployment
-  namespace: test
+  namespace: test-namespace
   labels:
-    app: uanews
+    app: uanews-depl-lab
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: uanews
-    template:
-      metadata:
-        labels:
-          app: uanews
-      spec:
-        containers:
-          - name: uanews
-            image: coolenov/fusion-uanews-api:latest
+  template:
+    metadata:
+      labels:
+        app: uanews
+    spec:
+      containers:
+        - name: uanews
+          image: coolenov/fusion-uanews-api:latest
+          ports:
+            - containerPort: 8030

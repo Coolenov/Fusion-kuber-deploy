@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-collector-deployment
-  namespace: test
+  namespace: test-namespace
   labels:
-    app: api-collector
+    app: collector-depl-lab
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: api-collector
-    template:
-      metadata:
-        labels:
-          app: api-collector
-      spec:
-        containers:
-          - name: api-collector
-            image: coolenov/fusion-api-collector:latest
+      app: collector
+  template:
+    metadata:
+      labels:
+        app: collector
+    spec:
+      containers:
+        - name: api-collector
+          image: coolenov/fusion-api-collector:latest

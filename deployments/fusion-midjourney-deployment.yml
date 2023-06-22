@@ -2,20 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: midjourney-api-deployment
-  namespace: test
+  namespace: test-namespace
   labels:
-    app: midjourney
+    app: midjourney-depl-lab
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: midjourney
-    template:
-      metadata:
-        labels:
-          app: midjourney
-      spec:
-        containers:
-          - name: midjourney
-            image: coolenov/fusion-midjourney-api:latest
+  template:
+    metadata:
+      labels:
+        app: midjourney
+    spec:
+      containers:
+        - name: midjourney
+          image: coolenov/fusion-midjourney-api:latest
+          ports:
+            - containerPort: 9020
