@@ -5,13 +5,6 @@
     app_path      : /kuber
 
   tasks:
-    - name : "create {{ app_path }}/"
-      file:
-        path : "{{ app_path }}/"
-        state: "directory"
-        mode : 0775
-      become       : yes
-
     - name : "delete old folder"
       shell: rm -r Fusion-kuber-deploy
       ignore_errors: yes
