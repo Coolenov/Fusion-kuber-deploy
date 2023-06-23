@@ -1,1 +1,25 @@
+name: Copy rep to master-node
 
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2.6.1
+        with:
+          playbook: copyrep.yml
+          directory: ./
+          key      : ${{ secrets.MY_KEY }}
+          inventory: |
+            [master]
+            master1 ansible_host=${{secrets.SERVER_HOST}} ansible_user=${{secrets.ANSIBLE_BECOME_USER}} ansible_password=${{secrets.ANSIBLE_BECOME_PASSWORD}}
+          options: |
+            --verbose
+            --inventory .hosts

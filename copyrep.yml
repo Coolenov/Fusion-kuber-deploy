@@ -1,0 +1,22 @@
+---
+- hosts: master
+  gather_facts: true
+  vars:
+    app_path      : /kuber
+
+  tasks:
+    - name : "create {{ app_path }}/"
+      file:
+        path : "{{ app_path }}/"
+        state: "directory"
+        mode : 0775
+      become       : yes
+      become_method: sudo
+
+    - name : "delete old folder"
+      shell: rm -r Fusion-kuber-deploy
+      ignore_errors: yes
+
+    - name : "git clone"
+      shell: git clone https://github.com/Coolenov/Fusion-kuber-deploy
+       
