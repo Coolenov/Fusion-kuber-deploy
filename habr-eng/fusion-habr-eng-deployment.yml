@@ -17,25 +17,7 @@ spec:
         app: habr-eng
     spec:
       containers:
-        - name: habrEng
+        - name: habr-eng
           image: coolenov/fusion-habr-eng-api:latest
           ports:
             - containerPort: 8020
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: habr-eng-service
-  labels:
-    env  : test
-    owner: AidarKulenov
-spec:
-  selector:
-    app: habr-eng
-  ports:
-    - name      : app-listener
-      protocol  : TCP
-      port      : 30120
-      targetPort: 8020
-  type: ClusterIP
