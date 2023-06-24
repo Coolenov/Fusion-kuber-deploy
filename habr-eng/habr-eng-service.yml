@@ -5,14 +5,14 @@ metadata:
   name     : habr-eng-service
   namespace: test-namespace
   labels:
-    env  : test
-    owner: AidarKulenov
+    app: habr-eng-service
 spec:
+  type: ClusterIP
   selector:
     app: habr-eng
   ports:
     - name      : app-listener
       protocol  : TCP
-      port      : 30120
+      port      : 11000
       targetPort: 8020
-  type: ClusterIP
+  

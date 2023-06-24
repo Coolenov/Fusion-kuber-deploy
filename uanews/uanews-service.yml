@@ -10,6 +10,7 @@ spec:
   selector:
     app: uanews
   ports:
-    - port: 31030
+    - name      : app-listener
+      port      : 11000
       targetPort: 8030
-      protocol: TCP
+      protocol  : TCP

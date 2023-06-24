@@ -4,7 +4,7 @@ metadata:
   name: uanews-deployment
   namespace: test-namespace
   labels:
-    app: uanews-depl-lab
+    app: uanews-deployment
 
 spec:
   replicas: 3

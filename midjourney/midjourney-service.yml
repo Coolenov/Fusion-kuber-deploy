@@ -9,7 +9,8 @@ spec:
   type: ClusterIP
   selector:
     app: midjourney
-  ports:
-    - port: 32020
-      targetPort: 9020
-      protocol: TCP
+    ports:
+      - name      : app-listener
+        port      : 11000
+        targetPort: 9020
+        protocol  : TCP

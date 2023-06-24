@@ -4,7 +4,7 @@ metadata:
   name: api-habr-ru-deployment
   namespace: test-namespace
   labels:
-    app: habrru-delp-lab
+    app: api-habr-ru-deployment
 
 spec:
   replicas: 3
