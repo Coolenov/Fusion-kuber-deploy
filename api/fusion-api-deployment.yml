@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-deployment
-  namespace: test-namespace
   labels:
-    app: api-depl-lab
+    app: api-deployment
 
 spec:
   replicas: 3

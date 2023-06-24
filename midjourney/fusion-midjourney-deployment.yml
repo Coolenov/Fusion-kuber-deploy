@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: midjourney-api-deployment
-  namespace: test-namespace
   labels:
     app: midjourney-api-deployment
 

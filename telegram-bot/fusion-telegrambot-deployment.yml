@@ -4,7 +4,7 @@ metadata:
   name: telegrambot-deployment
   namespace: test-namespace
   labels:
-    app: telegrambot-depl-lab
+    app: telegrambot-deployment
 
 spec:
   replicas: 3
