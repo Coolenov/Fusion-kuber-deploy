@@ -1,0 +1,7 @@
+---
+- name: Install first master-node
+  hosts: masters[0]
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  roles:
+    - install-master

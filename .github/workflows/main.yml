@@ -1,9 +1,9 @@
 name: Copy rep to master-node
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Run Ansible playbook
         uses: dawidd6/action-ansible-playbook@v2.6.1
         with:

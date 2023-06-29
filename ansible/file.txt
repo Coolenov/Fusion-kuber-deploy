@@ -1,0 +1,38 @@
+
+1. Change hostnames
+
+2. Add every host to /etc/hosts
+  185.39.207.94  master1
+  185.39.207.95  worker1
+  185.39.207.96  worker2
+
+3. Try ping by DNS
+
+4. Add core modules to /etc/modules-load.d/k8s.conf
+  br_netfilter
+  overlay
+
+5. Add modules to core
+  modprobe br_netfilter
+  modprobe overlay
+
+6. Check result (5)
+  lsmod | egrep "br_netfilter|overlay"
+
+7. Create config via bridge in netfilter
+  nano /etc/sysctl.d/k8s.conf
+
+8. Add to (7)
+  net.bridge.bridge-nf-call-ip6tables = 1
+  net.bridge.bridge-nf-call-iptables = 1
+
+9. Apply
+  sudo sysctl --system
+
+10. Install Docker
+  sudo apt-get install docker docker.io -y
+  sudo systemctl enable docker
+  sudo systemctl restart docker
+
+11. Install k8s
+  sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
