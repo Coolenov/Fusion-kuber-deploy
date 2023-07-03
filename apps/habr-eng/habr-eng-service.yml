@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name     : habr-eng-service
+  name     : habreng
   labels:
-    app: habr-eng-service
+    app: habreng
 spec:
   selector:
-    app: habr-eng
+    app: habreng
   ports:
     - name      : app-listener
       protocol  : TCP

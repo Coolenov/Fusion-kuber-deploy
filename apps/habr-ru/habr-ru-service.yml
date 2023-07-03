@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: habr-ru-service
+  name: habrru
   labels:
-    app: habr-ru-service
+    app: habrru
 spec:
   type: ClusterIP
   selector:
-    app: habr-ru
+    app: habrru
   ports:
     - port: 34002
       targetPort: 8010

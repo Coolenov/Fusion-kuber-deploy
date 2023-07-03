@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: uanews-service
+  name: uanews
   namespace: test
   labels:
-    app: uanews-service
+    app: uanews
 spec:
   type: ClusterIP
   selector:
