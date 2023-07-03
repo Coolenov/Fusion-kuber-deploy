@@ -11,6 +11,6 @@ spec:
   ports:
     - name      : app-listener
       protocol  : TCP
-      port      : 34001
+      port      : 8020
       targetPort: 8020
   type: ClusterIP

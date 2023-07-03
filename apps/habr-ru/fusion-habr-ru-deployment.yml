@@ -9,14 +9,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: habr-ru
+      app: habrru
   template:
     metadata:
       labels:
-        app: habr-ru
+        app: habrru
     spec:
       containers:
-        - name: habr-ru
+        - name: habrru
           image: coolenov/fusion-habr-ru-api:latest
           ports:
             - containerPort: 8010

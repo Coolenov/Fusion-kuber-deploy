@@ -9,6 +9,6 @@ spec:
   selector:
     app: habrru
   ports:
-    - port: 34002
+    - port: 8010
       targetPort: 8010
       protocol: TCP

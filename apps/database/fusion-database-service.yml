@@ -7,10 +7,10 @@ metadata:
     app: db
 spec:
   selector:
-    app: db
+    app: mysql
   ports:
     - name      : app-listener
       protocol  : TCP
-      port      : 34000
+      port      : 3306
       targetPort: 3306
   type: ClusterIP

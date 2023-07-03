@@ -9,6 +9,6 @@ spec:
   selector:
     app: midjourney
   ports:
-    - port: 34003
+    - port: 9020
       targetPort: 9020
       protocol: TCP
