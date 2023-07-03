@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name     : habr-eng-service
+  name     : mysql-service
   labels:
-    app: habr-eng-service
+    app: mysql-service
 spec:
   selector:
-    app: habr-eng
+    app: mysql
   ports:
     - name      : app-listener
       protocol  : TCP
-      port      : 34001
-      targetPort: 8020
+      port      : 34000
+      targetPort: 3306
   type: ClusterIP

@@ -11,6 +11,6 @@ spec:
     app: uanews
   ports:
     - name      : app-listener
-      port      : 11000
+      port      : 34004
       targetPort: 8030
       protocol  : TCP

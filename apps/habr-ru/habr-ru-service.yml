@@ -9,6 +9,6 @@ spec:
   selector:
     app: habr-ru
   ports:
-    - port: 31010
+    - port: 34002
       targetPort: 8010
       protocol: TCP
