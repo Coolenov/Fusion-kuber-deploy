@@ -1,9 +1,13 @@
 [k8s_cluster]
 debian1     ansible_host=185.39.207.94
 debian2     ansible_host=185.39.207.95
-debian3     ansible_host=185.39.207.96
+debian3     ansible_host=193.233.18.42
+debian4     ansible_host=46.29.234.103
+debian5     ansible_host=46.29.234.104
 [masters]
 debian1     ansible_host=185.39.207.94
 [workers]
 debian2     ansible_host=185.39.207.95
-debian3     ansible_host=185.39.207.96
+debian3     ansible_host=193.233.18.42
+debian4     ansible_host=46.29.234.103
+debian5     ansible_host=46.29.234.104
